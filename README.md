@@ -1,2 +1,38 @@
 # Hadimkoy-Su-HyperLedger
 A Hyperledger Fabric application to track juice products throughout the production process for a factory in Hadımköy, Istanbul. Connects to a multi-org Fabric network, listens for chaincode events, allows products to be created with details like flavor, batch and barcode, monitors locations within the factory, and queries products by attributes. 
+
+Hadımköy Juice Factory Supply Chain Application
+This project uses Hyperledger Fabric to provide supply chain traceability for a juice factory in Hadımköy, Istanbul.
+
+Purpose
+Track juice products throughout the production process, from raw materials receipt to final delivery.
+
+Key benefits:
+
+Detect expiring products
+Manage inventory levels
+Provide traceability from production to consumer
+Technologies
+Hyperledger Fabric - The permissioned distributed ledger for the application data
+Python SDK - Used to connect to and interact with the Fabric network
+Docker - Used for deploying and running the Fabric network components
+Features
+Connects to a multi-organization Hyperledger Fabric network
+Listens for chaincode events when new juices are created
+Stores product details like flavor, batch number and barcode on the ledger
+Tracks product locations within the factory as they move through receiving, processing, filling and storage areas
+Allows querying products by attributes like flavor and expiration date
+Emits events when product statuses change (in transit, delivered, etc.)
+
+Running the app
+Start the Fabric network using docker-compose
+Run the hadimkoysu.py file to interact with the network
+Follow the logs to see products being created, locations updated and events emitted
+
+Example Output
+
+Apple juice created with batch 123 
+Product moved to processing area
+Orange juice created with batch 246
+Product moved to filling area
+Product packed for delivery 
