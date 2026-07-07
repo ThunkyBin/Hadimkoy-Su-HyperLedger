@@ -1,3 +1,5 @@
+import json
+
 from fabric_client import Client
 from fabric_ca_client import FabricCAClient
 
