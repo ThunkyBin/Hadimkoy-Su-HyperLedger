@@ -28,5 +28,5 @@ def track_juice():
     result = client.query_chaincode('Juice', 'getJuicesByFlavor', flavor)
     return result
   
-# Start tracking juices    
-track_juice()
+if __name__ == "__main__":
+  track_juice()
