@@ -5,28 +5,32 @@ factory supply chain in Hadimkoy, Istanbul.
 
 ## What It Does
 
-- Connects to a Fabric channel.
-- Enrolls an admin wallet through a Fabric CA client.
-- Listens for `Juice` chaincode events.
-- Submits juice creation transactions.
-- Updates product location on the ledger.
+- Creates juice product records.
+- Updates product locations.
+- Keeps a simple event trail.
 - Queries juices by flavor.
+- Runs locally as a dependency-free Node.js demo.
 
 ## Main File
 
-`hadimkoysu-fabric.js` contains the client workflow. The file currently uses
-Python-style Fabric SDK calls even though the extension is `.js`, so treat it as
-a prototype integration script.
+`hadimkoysu-fabric.js` contains a runnable JavaScript demo that mirrors the
+intended Fabric product tracking flow.
+
+## Run Locally
+
+```bash
+npm start
+```
 
 ## Example Flow
 
-1. Start the Fabric network and chaincode.
-2. Configure the CA URL, channel, and gateway values in the script.
-3. Run the tracker to listen for new juice events.
-4. Submit create and location update transactions.
+1. Create apple and orange juice product records.
+2. Move products through receiving, processing, filling, and storage.
+3. Query products by flavor.
+4. Print the current supply-chain table.
 
 ## Notes
 
-Do not use placeholder CA credentials in production. A real deployment should
-load connection profiles, identities, and channel names from environment
-configuration.
+This is a local runnable prototype. A production Hyperledger Fabric integration
+should replace the in-memory store with a real Fabric gateway, connection
+profile, wallet identity, channel, and chaincode calls.
